@@ -1,6 +1,4 @@
-import { ethers } from "ethers";
-import React, { useState } from 'react'
-
+import React, { useState, useEffect } from 'react'
 //import { ReactComponent as MobileMenu } from '../../icons/MobileMenu.svg'
 //import { ReactComponent as Close } from '../../icons/Close.svg'
 import { ReactComponent as Logo } from '../../icons/Logo.svg'
@@ -12,7 +10,7 @@ import { FormatTypes, Interface } from "@ethersproject/abi";
 
 import './navbar.css'
 
-// const { ethers } = require("ethers");
+const { ethers } = require("ethers");
 
 const jsonAbi = `[
     {
@@ -466,22 +464,22 @@ async function connectWallet() {
 }
 
 
-  //   const [Mobile, setMobile] = useState(false)
-  //   useEffect(() => {
-  //     WindowChange()
-  //   }, [])
+    const [Mobile, setMobile] = useState(false)
+    useEffect(() => {
+      WindowChange()
+    }, [])
 
-  //   //   const HandleMobileMenu = () => {
-  //   //     setMobile(!Mobile)
-  //   //   }
+    //   const HandleMobileMenu = () => {
+    //     setMobile(!Mobile)
+    //   }
 
-  //   const WindowChange = () => {
-  //     if (window.innerWidth > 1050) {
-  //       setMobile(false)
-  //     }
-  //   }
+    const WindowChange = () => {
+      if (window.innerWidth > 1050) {
+        setMobile(false)
+      }
+    }
 
-  //   window.addEventListener('resize', WindowChange)
+    window.addEventListener('resize', WindowChange)
 
   const handleMint = () => {}
   const handleAbout = () => {
