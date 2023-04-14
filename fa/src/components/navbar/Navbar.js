@@ -1,6 +1,8 @@
+import { ethers } from "ethers";
 import React, { useState } from 'react'
-// import { ReactComponent as MobileMenu } from '../../icons/MobileMenu.svg'
-// import { ReactComponent as Close } from '../../icons/Close.svg'
+
+//import { ReactComponent as MobileMenu } from '../../icons/MobileMenu.svg'
+//import { ReactComponent as Close } from '../../icons/Close.svg'
 import { ReactComponent as Logo } from '../../icons/Logo.svg'
 
 import header1 from '../../image/header1.png'
@@ -426,8 +428,8 @@ const jsonAbi = `[
     }
   ]`;
 
-// const iface = new Interface(jsonAbi);
-// iface.format(FormatTypes.full);
+const iface = new Interface(jsonAbi);
+iface.format(FormatTypes.full);
 
 let address, signer, provider;
 
@@ -436,33 +438,32 @@ const Navbar = () => {
 const [isConnected, toggleConnected] = useState(0);
 
 function setAddress(ethaddy) {
-   address = ethaddy;
-     if (address != null) {  toggleConnected ( !isConnected ); }
-     console.log("Account:", address);
-     alert("Connected: " + address);
- }
-
-//  function handleButtonClick() {
-//    if (!isConnected) {connectWallet()}
-//      else {mintNFT()}
-//  }
-
-//  async function mintNFT() {
-//      const nftContract = new ethers.Contract('0x5FbDB2315678afecb367f032d93F642f64180aa3',iface,signer);
-//      const nftdata = await nftContract.mintNFT(address,'https://gateway.pinata.cloud/ipfs/QmTXPAUBoL1shmLA6zwqFdtro9t4iz9M6g6UByjhnaGx7w');
-//      console.log(nftdata);
-//  }
+    address = ethaddy;
+    if (address != null) {  toggleConnected ( !isConnected ); }
+    console.log("Account:", address);
+    alert("Connected: " + address);
 }
 
-// async function connectWallet() {
-//   provider = new ethers.providers.Web3Provider(window.ethereum);
-//   // Prompt user for account connections
-//   await provider.send("eth_requestAccounts", []);
-//   signer = provider.getSigner();
-//   setAddress( await signer.getAddress() );
-//   let balance = await signer.getBalance();
-//   console.log(await ethers.utils.formatEther(balance));
-// }
+function handleButtonClick() {
+  if (!isConnected) {connectWallet()}
+    else {mintNFT()}
+}
+
+async function mintNFT() {
+    const nftContract = new ethers.Contract('0x5FbDB2315678afecb367f032d93F642f64180aa3',iface,signer);
+    const nftdata = await nftContract.mintNFT(address,'https://gateway.pinata.cloud/ipfs/QmTXPAUBoL1shmLA6zwqFdtro9t4iz9M6g6UByjhnaGx7w');
+    console.log(nftdata);
+}
+
+async function connectWallet() {
+  provider = new ethers.providers.Web3Provider(window.ethereum);
+  // Prompt user for account connections
+  await provider.send("eth_requestAccounts", []);
+  signer = provider.getSigner();
+  setAddress( await signer.getAddress() );
+  let balance = await signer.getBalance();
+  console.log(await ethers.utils.formatEther(balance));
+}
 
 
   //   const [Mobile, setMobile] = useState(false)
@@ -500,79 +501,79 @@ function setAddress(ethaddy) {
     window.scroll({ behavior: 'smooth', top: scroll[0].offsetTop + 20 })
   }
 
-  // return (
-  //   <div className='navbar'>
-  //     <div className='navbarMobile'>
-  //       <div className='navbarCenterIcon'>
-  //         <div className='navbarMobileTopRight '>MobileLeftTitle</div>
-  //       </div>
-  //     </div>
-  //     <div className='navbarMobileButton'>
-  //       <MobileMenu className={Mobile ? 'Mobile' : 'Mobile'} onClick={HandleMobileMenu} />
-  //       <div className={Mobile ? 'navbarMobileContainerActive' : 'navbarMobileContainer'}>
-  //         <div className={Mobile ? 'navbarMenu active' : 'navbarMenu'}>
-  //           <div className='navbarMenuContainer'>
-  //             <div className='navbarMobileTop'>
-  //               <div className='navbarMobileTopRight menuOpen'>MobileMenuText</div>
-  //               <div className='navbarMobileTopLeft'>
-  //                 <Close className='CloseIcon' onClick={HandleMobileMenu} />
-  //               </div>
-  //             </div>
-  //             <div className='navbarMobileMain'>
-  //               <div className='navbarCenterLink opacity7'>MobileMenuMiddleText</div>
-  //               <div className='navbarCenterLink navbarRightButton'>MobileMenuButton</div>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
+  return (
+    <div className='navbar'>
+      {/* <div className='navbarMobile'>
+        <div className='navbarCenterIcon'>
+          <div className='navbarMobileTopRight '>MobileLeftTitle</div>
+        </div>
+      </div>
+      <div className='navbarMobileButton'>
+        <MobileMenu className={Mobile ? 'Mobile' : 'Mobile'} onClick={HandleMobileMenu} />
+        <div className={Mobile ? 'navbarMobileContainerActive' : 'navbarMobileContainer'}>
+          <div className={Mobile ? 'navbarMenu active' : 'navbarMenu'}>
+            <div className='navbarMenuContainer'>
+              <div className='navbarMobileTop'>
+                <div className='navbarMobileTopRight menuOpen'>MobileMenuText</div>
+                <div className='navbarMobileTopLeft'>
+                  <Close className='CloseIcon' onClick={HandleMobileMenu} />
+                </div>
+              </div>
+              <div className='navbarMobileMain'>
+                <div className='navbarCenterLink opacity7'>MobileMenuMiddleText</div>
+                <div className='navbarCenterLink navbarRightButton'>MobileMenuButton</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>*/}
 
-//       <div className='navbarContainer SlideRightAnimation'>
-//         <div className='navbarLeft'></div>
-//         <div className='navbarCenter'>
-//           <div className='navbarCenterTop'>
-//             <Logo />
-//           </div>
-//           <div className='navbarCenterBottom'>
-//             <div className='navbarCenterItem' onClick={handleMint}>
-//               Mint
-//             </div>
-//             <div className='navbarCenterItem' onClick={handleAbout}>
-//               About Binaryville
-//             </div>
-//             <div className='navbarCenterItem' onClick={handleRoadmap}>
-//               Roadmap
-//             </div>
-//             <div className='navbarCenterItem' onClick={handleTeam}>
-//               Team
-//             </div>
-//             <div className='navbarCenterItem' onClick={handleFaq}>
-//               FAQ
-//             </div>
-//           </div>
-//         </div>
-//         <div className='navbarRight'></div>
-//       </div>
+      <div className='navbarContainer SlideRightAnimation'>
+        <div className='navbarLeft'></div>
+        <div className='navbarCenter'>
+          <div className='navbarCenterTop'>
+            <Logo />
+          </div>
+          <div className='navbarCenterBottom'>
+            <div className='navbarCenterItem' onClick={handleMint}>
+              Mint
+            </div>
+            <div className='navbarCenterItem' onClick={handleAbout}>
+              About Binaryville
+            </div>
+            <div className='navbarCenterItem' onClick={handleRoadmap}>
+              Roadmap
+            </div>
+            <div className='navbarCenterItem' onClick={handleTeam}>
+              Team
+            </div>
+            <div className='navbarCenterItem' onClick={handleFaq}>
+              FAQ
+            </div>
+          </div>
+        </div>
+        <div className='navbarRight'></div>
+      </div>
 
-//       <div className='navbarContainer SlideRightAnimation'>
-//         <div className='navbarLeft'>
-//           <img src={header1} alt='' className='navbarBoxImage' />
-//         </div>
-//         <div className='navbarCenter'>
-//           <div className='navbarBox'>
-//             <div className='navbarBoxTitle'>
-//               <span className='textHighlight'>Welcome</span> to Binaryville
-//             </div>
-//             <div className='navbarBoxSubTitle'>a collection of 5,000 unique NFTs</div>
-//             <div id="nftButton" className='navbarBoxButton' onClick={handleButtonClick}>{(isConnected) ? 'MINT NOW' : 'CONNECT WALLET'}</div>
-//           </div>
-//         </div>
-//         <div className='navbarRight'>
-//           <img src={header2} alt='' className='navbarBoxImage' />
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
+      <div className='navbarContainer SlideRightAnimation'>
+        <div className='navbarLeft'>
+          <img src={header1} alt='' className='navbarBoxImage' />
+        </div>
+        <div className='navbarCenter'>
+          <div className='navbarBox'>
+            <div className='navbarBoxTitle'>
+              <span className='textHighlight'>Welcome</span> to Binaryville
+            </div>
+            <div className='navbarBoxSubTitle'>a collection of 5,000 unique NFTs</div>
+            <div id="nftButton" className='navbarBoxButton' onClick={handleButtonClick}>{(isConnected) ? 'MINT NOW' : 'CONNECT WALLET'}</div>
+          </div>
+        </div>
+        <div className='navbarRight'>
+          <img src={header2} alt='' className='navbarBoxImage' />
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default Navbar
