@@ -26,10 +26,7 @@ const FAQ = () => {
             {one && (
               <div className='faqItemAnswer'>
                 <div className='faqItemAnswerText'>
-                  Repulsive questions contented him few extensive supported. Of remarkably thoroughly he appearance
-                  in. Supposing tolerably applauded or of be. Suffering unfeeling so objection agreeable allowance
-                  me of. Ask within entire season sex common far who family. As be valley warmth assure on. Park
-                  girl they rich hour new well way you. Face ye be me been room we sons fond.
+                   project to mine NFT with our wallet and a smart contract
                 </div>
               </div>
             )}
@@ -42,10 +39,7 @@ const FAQ = () => {
             {two && (
               <div className='faqItemAnswer'>
                 <div className='faqItemAnswerText'>
-                  Repulsive questions contented him few extensive supported. Of remarkably thoroughly he appearance
-                  in. Supposing tolerably applauded or of be. Suffering unfeeling so objection agreeable allowance
-                  me of. Ask within entire season sex common far who family. As be valley warmth assure on. Park
-                  girl they rich hour new well way you. Face ye be me been room we sons fond.
+                You can coin NFT Here if you want more you can call me.
                 </div>
               </div>
             )}
@@ -58,10 +52,7 @@ const FAQ = () => {
             {three && (
               <div className='faqItemAnswer'>
                 <div className='faqItemAnswerText'>
-                  Repulsive questions contented him few extensive supported. Of remarkably thoroughly he appearance
-                  in. Supposing tolerably applauded or of be. Suffering unfeeling so objection agreeable allowance
-                  me of. Ask within entire season sex common far who family. As be valley warmth assure on. Park
-                  girl they rich hour new well way you. Face ye be me been room we sons fond.
+                This is a game model for the future, if many people are interested, development continues.
                 </div>
               </div>
             )}
@@ -75,10 +66,7 @@ const FAQ = () => {
             {four && (
               <div className='faqItemAnswer'>
                 <div className='faqItemAnswerText'>
-                  Repulsive questions contented him few extensive supported. Of remarkably thoroughly he appearance
-                  in. Supposing tolerably applauded or of be. Suffering unfeeling so objection agreeable allowance
-                  me of. Ask within entire season sex common far who family. As be valley warmth assure on. Park
-                  girl they rich hour new well way you. Face ye be me been room we sons fond.
+                  You can get an NFT to show your friends how updated you are and play in the future if the project continues.
                 </div>
               </div>
             )}
