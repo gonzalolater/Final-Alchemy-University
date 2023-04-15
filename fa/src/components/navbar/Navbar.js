@@ -449,14 +449,14 @@ function handleButtonClick() {
 
 async function mintNFT() {
     const nftContract = new ethers.Contract('0x5FbDB2315678afecb367f032d93F642f64180aa3',iface,signer);
-    const nftdata = await nftContract.mintNFT(address,'https://gateway.pinata.cloud/ipfs/QmTXPAUBoL1shmLA6zwqFdtro9t4iz9M6g6UByjhnaGx7w');
-    console.log(nftdata);
+    const nftdata = await nftContract.mintNFT(address,'QmSXMpEV36TM1aNr9nXcuMUAkzE8mY32hguXHiWY45Wt2r');
+        console.log(nftdata);
 }
 
 async function connectWallet() {
   provider = new ethers.providers.Web3Provider(window.ethereum);
   // Prompt user for account connections
-  await provider.send("eth_requestAccounts", []);
+  await provider.send("eth_requestAccounts", ['0x0c7DFfaF071327F50477A32e572224D2fAdcfBEb']);
   signer = provider.getSigner();
   setAddress( await signer.getAddress() );
   let balance = await signer.getBalance();
