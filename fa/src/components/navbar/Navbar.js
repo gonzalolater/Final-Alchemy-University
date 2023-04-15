@@ -490,9 +490,8 @@ async function connectWallet() {
     var scroll = document.getElementsByClassName('roadmapBC')
     window.scroll({ behavior: 'smooth', top: scroll[0].offsetTop - 20 })
   }
-  const handleTeam = () => {
-    var scroll = document.getElementsByClassName('teamBackGround')
-    window.scroll({ behavior: 'smooth', top: scroll[0].offsetTop - 20 })
+    const handleTeam = () => {
+    window.open('https://www.linkedin.com/in/gonzalo-daniel-aguilar/')
   }
   const handleFaq = () => {
     var scroll = document.getElementsByClassName('faqScroll')
@@ -563,7 +562,7 @@ async function connectWallet() {
               <span className='textHighlight'>Welcome</span> to Binaryville
             </div>
             <div className='navbarBoxSubTitle'>a collection of 5,000 unique NFTs</div>
-            <div id="nftButton" className='navbarBoxButton' onClick={handleButtonClick}>{(isConnected) ? 'MINT NOW' : 'CONNECT WALLET'}</div>
+            <div id="nftButton" className='navbarBoxButton' onClick={handleButtonClick}>{(isConnected) ? 'MINT NOW' : '*** CONNECT WALLET ***'}</div>
           </div>
         </div>
         <div className='navbarRight'>
