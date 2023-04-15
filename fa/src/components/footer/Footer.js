@@ -6,16 +6,19 @@ import { ReactComponent as OpenSeaSVG } from '../../icons/OpenSea.svg'
 import './footer.css'
 
 const Footer = () => {
+  const handleOpenSea = () => {
+    window.open('https://testnets.opensea.io/SrZygon')
+  }
   const handleDiscord = () => {
-    window.open('')
+    window.open('https://discord.gg/k6FCNy7RtC')
   }
 
   const handleTwitter = () => {
-    window.open('')
+    window.open('https://twitter.com/Coach_Bullets')
   }
 
   const handleInstagram = () => {
-    window.open('')
+    window.open('https://www.instagram.com/srzygon/')
   }
   return (
     <div className='footerBC componentFirst'>
@@ -24,7 +27,9 @@ const Footer = () => {
           <div className='footerIcon'>
             <OpenSeaSVG />
           </div>
-          <div className='footerIconText'>Open sea</div>
+          <div className='footerLink' onClick={handleOpenSea}>
+          <div className='footerIconText'>Open sea (ClickHere) </div>
+          </div>
           <div className='footerName'>Binaryville</div>
           <div className='footerName'>About Binaryville</div>
 
