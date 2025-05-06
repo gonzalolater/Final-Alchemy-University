@@ -464,10 +464,10 @@ async function connectWallet() {
 }
 
 
-    const [Mobile, setMobile] = useState(false)
-    useEffect(() => {
-      WindowChange()
-    }, [])
+//    const [Mobile, setMobile] = useState(false)
+//    useEffect(() => {
+//      WindowChange()
+//    }, [])
 
     //   const HandleMobileMenu = () => {
     //     setMobile(!Mobile)
